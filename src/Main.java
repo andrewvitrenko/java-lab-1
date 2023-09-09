@@ -9,9 +9,9 @@ public class Main {
 
         Main.checkLimits(a, b, n, m);
 
-        int result = Main.calculate(a, b, n, m);
+        float result = Main.calculate(a, b, n, m);
 
-        System.out.printf("result %d", result);
+        System.out.printf("result %f", result);
     }
 
     public static boolean isNumeric(String str) {
@@ -48,8 +48,8 @@ public class Main {
         }
     }
 
-    public static int calculate(short a, short b, short n, short m) throws Exception {
-        int sum = 0;
+    public static float calculate(short a, short b, short n, short m) throws Exception {
+        float sum = 0;
 
         for (short i = a; i <= n; i++) {
             for (short j = b; j <= m; j++) {
@@ -57,7 +57,7 @@ public class Main {
                     throw new Exception(String.format("Division by zero, i - %d, j - %d", i, j));
                 }
 
-                sum += (i % j) / i;
+                sum += (float) (i % j) / i;
             }
         }
 
